@@ -1,16 +1,12 @@
-class Solution(object):
-    def groupAnagrams(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: List[List[str]]
-        """
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         ans = collections.defaultdict(list)
-
-        for string in strs:
-            count = [0]*26
-            for letter in string:
-                count[ord(letter) - ord('a')] += 1
-            ans[tuple(count)].append(string)
         
-        return ans.values()
-
+        for s in strs:
+            count = [0]*26
+            for letter in s:
+                count[ord(letter) - ord('a')] += 1
+            
+            ans[tuple(count)].append(s)
+        
+        return list(ans.values())
