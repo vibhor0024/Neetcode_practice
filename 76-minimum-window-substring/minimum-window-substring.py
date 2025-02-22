@@ -4,8 +4,6 @@ class Solution:
 
         window = {}
         Tcount = {}
-
-        indices = [-1.-1]
         minimum = float("infinity")
         have = 0
         
