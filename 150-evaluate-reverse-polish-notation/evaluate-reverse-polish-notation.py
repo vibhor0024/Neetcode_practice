@@ -13,10 +13,7 @@ class Solution:
                 stack.append(b-a)
             elif c == '/':
                 a, b = stack.pop() , stack.pop()
-                if b/a < 0:
-                    stack.append(ceil(b/a))
-                else:
-                    stack.append(int(b/a))
+                stack.append(int(b/a))
             else:
                 stack.append(int(c))
         
