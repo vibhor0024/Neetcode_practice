@@ -4,16 +4,13 @@ class Solution:
         r = len(nums)-1
 
         while l<=r:
-            if target == nums[l]:
-                return l
-            elif target == nums[r]:
-                return r
-            
-            if target > nums[l]:
-                l+=1
-            
-            if target < nums[r]:
-                r -= 1
+            m = l + (r-l) // 2
+            if nums[m] > target:
+                r = m -1
+            elif nums[m] < target:
+                l = m + 1
+            else:
+                return m
             
         
         return -1
