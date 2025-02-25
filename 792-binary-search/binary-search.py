@@ -3,8 +3,6 @@ class Solution:
         l = 0
         r = len(nums)-1
 
-        if target == nums[0]:
-            return 0
         while l<=r:
             if target == nums[l]:
                 return l
