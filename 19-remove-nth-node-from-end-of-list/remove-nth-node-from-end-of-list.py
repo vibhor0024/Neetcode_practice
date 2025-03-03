@@ -1,12 +1,11 @@
-from typing import Optional
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+
         # Step 1: Find the size of the list
         size = 0
         curr = head
@@ -33,5 +32,7 @@ class Solution:
             prev.next = curr.next
 
         return head
+
+        
 
         
