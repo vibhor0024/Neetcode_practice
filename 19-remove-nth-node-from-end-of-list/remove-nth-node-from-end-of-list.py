@@ -6,32 +6,21 @@
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
 
-        # Step 1: Find the size of the list
-        size = 0
-        curr = head
-        while curr:
-            size += 1
-            curr = curr.next
+        dummy= ListNode(0,head)
+        l = dummy
+        r = head
+
+        while r and n>0:
+            r = r.next
+            n -= 1
         
-        # Step 2: Find the target index (0-based)
-        target = size - n
+        while r:
+            l = l.next
+            r = r.next
+        
+        l.next = l.next.next
 
-        # Step 3: If we need to remove the head
-        if target == 0:
-            return head.next
-
-        # Step 4: Traverse to the (target-1)th node
-        prev = None
-        curr = head
-        for i in range(target):  # Stop at the node before target
-            prev = curr
-            curr = curr.next
-
-        # Step 5: Remove the target node
-        if prev:
-            prev.next = curr.next
-
-        return head
+        return dummy.next
 
         
 
