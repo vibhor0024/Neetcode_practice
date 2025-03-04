@@ -20,31 +20,18 @@ class Solution:
         
         res = n1 + n2
 
-        digits = len(str(abs(res)))
-
-        head = ListNode(res//(10**(digits-1)))
-        res -= (res//(10**(digits-1)))*(10**(digits-1))
-        digits -= 1
+        head = ListNode(res%10)
+        res = res // 10
         curr = head
-        while digits:
-
-            curr.next = ListNode(res//(10**(digits-1)))
-            res -= (res//(10**(digits-1)))*(10**(digits-1))
-            digits -= 1
+        while res:
+            curr.next = ListNode(res%10)
+            res = res//10
             curr = curr.next
         
-        curr.next = None
 
-        prev = None
-        curr = head
+        return head
 
-        while curr:
-            nxt = curr.next
-            curr.next = prev
-            prev = curr
-            curr = nxt
-
-        return prev
+       
         
 
         
