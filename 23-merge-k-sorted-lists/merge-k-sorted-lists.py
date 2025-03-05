@@ -9,11 +9,15 @@ class Solution:
             return None
         
         while len(lists) > 1:
-            newl = self.twosortedlists(lists[0], lists[1])  # Merge first two lists
-            del lists[0:2]  # Remove merged lists
-            lists.insert(0, newl)  # Insert the merged list at the beginning
+            merged = []
 
-        return lists[0]   # Return the final merged list
+            for i in range(0,len(lists),2):
+                l1 = lists[i]
+                l2 = lists[i+1] if i+1 < len(lists) else None
+                merged.append(self.twosortedlists(l1,l2))
+            lists = merged
+        
+        return lists[0]
 
     def twosortedlists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         dummy = ListNode()  # Dummy node to build the merged list
