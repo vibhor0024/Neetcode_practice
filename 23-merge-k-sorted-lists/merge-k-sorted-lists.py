@@ -13,7 +13,7 @@ class Solution:
             del lists[0:2]  # Remove merged lists
             lists.insert(0, newl)  # Insert the merged list at the beginning
 
-        return lists[0] if lists else None  # Return the final merged list
+        return lists[0]   # Return the final merged list
 
     def twosortedlists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         dummy = ListNode()  # Dummy node to build the merged list
