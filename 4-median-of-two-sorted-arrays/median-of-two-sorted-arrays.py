@@ -28,6 +28,6 @@ class Solution:
             
             elif nums1left > nums2right:
                 r = i - 1
-            else:
+            elif nums2left > nums1right:
                 l = i + 1
             
