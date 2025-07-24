@@ -6,7 +6,7 @@ class Solution:
         d = collections.deque()
         res = []
         for r in range(len(nums)):
-            while d and nums[d[-1]] < nums[r]:
+            while d and nums[d[-1]] <= nums[r]:
                 d.pop()
             
             d.append(r)
