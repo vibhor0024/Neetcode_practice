@@ -28,7 +28,7 @@ class Solution:
 
         level = 0
 
-        d = collections.deque([root])
+        d = deque([root])
 
         while d:
             
