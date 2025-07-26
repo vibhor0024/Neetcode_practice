@@ -21,32 +21,32 @@ class Solution:
         
         # return res
 
-        #Iterative BFS (deque)
-
-        # if not root:
-        #     return 0
-
-        # level = 0
-
-        # d = collections.deque([root])
-
-        # while d:
-            
-        #     for i in range(len(d)):
-        #         node = d.popleft()
-        #         if node.left:
-        #             d.append(node.left)
-        #         if node.right:
-        #             d.append(node.right)
-            
-        #     level += 1
-        
-        # return level
-
-        # Recursive DFS
+        # Iterative BFS (deque)
 
         if not root:
             return 0
+
+        level = 0
+
+        d = collections.deque([root])
+
+        while d:
+            
+            for i in range(len(d)):
+                node = d.popleft()
+                if node.left:
+                    d.append(node.left)
+                if node.right:
+                    d.append(node.right)
+            
+            level += 1
         
-        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+        return level
+
+        # Recursive DFS
+
+        # if not root:
+        #     return 0
+        
+        # return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
         
