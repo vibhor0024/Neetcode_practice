@@ -4,7 +4,7 @@ class Solution:
         maxheap = [-cnt for cnt in count.values()]
         heapq.heapify(maxheap)
         time = 0
-        queue = collections.deque()
+        queue = deque()
 
         while maxheap or queue:
             time += 1
