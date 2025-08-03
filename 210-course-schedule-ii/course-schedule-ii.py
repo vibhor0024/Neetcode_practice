@@ -24,7 +24,7 @@ class Solution:
             return True
         
         for i in range(numCourses):
-            if dfs(i) == False:
+            if not dfs(i):
                 return []
         
         return output
