@@ -16,7 +16,7 @@ class Solution:
             
             cycle.add(crs)
             for pre in prereq[crs]:
-                if dfs(pre) == False:
+                if not dfs(pre):
                     return False
             cycle.remove(crs)
             visit.add(crs)
